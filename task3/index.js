@@ -4,8 +4,8 @@ let stepsNum = 10;
 let secNum = '' + Math.ceil(Math.random() * (99999 - 100) + 100);
 console.log(`Угадай число из ${secNum.length} цифр, у вас ${stepsNum} попыток`);
 
-//
-console.log('Загаданное число: ',secNum);
+// дебаг
+//console.log('Загаданное число: ',secNum);
 //
 for(let step = 1; step < stepsNum + 1; step++){
     console.log(`Попытка ${step}`);
@@ -37,10 +37,13 @@ function checkNum(secNum,ansNum){
                 }else if(secNum.indexOf(ansNum[i]) != -1){
                     //цифра есть в числе
                     cows.push(ansNum[i]);
+                    continue
                 }
             }
-            console.log('совпавших цифр не на своих местах: ',cows.length,` (${cows.join(' ')})`);
-            console.log('цифр на своих местах: ',bulls.length,` (${bulls.join(' ')})`);
+            //console.log('совпавших цифр не на своих местах: ',cows.length,` (${cows.join(' ')})`);
+            //console.log('цифр на своих местах: ',bulls.length,` (${bulls.join(' ')})`);
+            console.log('совпавших цифр не на своих местах: ',cows.length);
+            console.log('цифр на своих местах: ',bulls.length);
 
         }else{
             console.log('Количество разрядов числа не совпадает с загаданным числом')
